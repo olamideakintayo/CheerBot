@@ -38,15 +38,12 @@ Django framework is used to implement this web app. You can install Django by fa
 
 ```
 python manage.py runserver
-```
-
-![web](https://user-images.githubusercontent.com/7195953/34638687-2e3b728c-f2f7-11e7-9843-0e0992c2c1d3.PNG)
 
 #### Rest api
 This app allows you to interact with bot using a rest api. You can find the [controller](https://github.com/nimeshabuddhika/Tensorflow-Chatbot/blob/master/Tensorflow_Chatbot/Api/controller.py) file from */Tensorflow_Chatbot/Api/controller.py* location. To execute this Rest api you also need to install [Django framework](https://www.djangoproject.com/download/) 
 
 
-* Request URL     &nbsp;&nbsp;&nbsp;: http://127.0.0.1:8000/api
+* Request URL     &nbsp;&nbsp;&nbsp;: http://cheerbot/api/
 * Request Type    &nbsp;&nbsp;&nbsp;: 'POST'
 * Pay load        &nbsp;&nbsp;&nbsp;: ```{"msg" : "What is your name"}```
 * Response        &nbsp;&nbsp;&nbsp;: ```{"ques" : "What is your name", "res":"I'm Slack", "time" :"2018-01 10:07:32"}```
