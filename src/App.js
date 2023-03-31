@@ -230,8 +230,8 @@ function App() {
                     {/* A div that displays a list of therapist locations. The list is generated based on data in the responseData object.*/}
                     <div>
                       {Object.keys(responseData.list).map((key) => {
-                        const isClosed =
-                          responseData.list[key].open === "Closed at this time";
+                        const isPresentlyOpen =
+                          responseData.list[key].open === "Presently Open";
                         return (
                           <div className="border-gray-300 py-9 border-b-4">
                             <p className="font-bold text-xl mb-2">
@@ -257,7 +257,7 @@ function App() {
                             </p>
                             <p
                               className={`text-lg ${
-                                isClosed ? "text-green-500" : "text-red-500"
+                                isPresentlyOpen ? "text-green-500" : "text-red-500"
                               }`}
                             >
                               {responseData.list[key].open}
