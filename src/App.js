@@ -174,7 +174,7 @@ function App() {
   return (
     <div className="">
       <div className="header font-bold">
-        <p style={{ textAlign: "center" }}>Welcome to CheerBot😃</p>
+        <p style={{ textAlign: "center" }} className="">Welcome to CheerBot😃</p>
     
       <div>
         <p style={{ textAlign: "center" }}>
