@@ -1,0 +1,1 @@
+web: gunicorn Tensorflow_Chatbot.wsgi --log-file -

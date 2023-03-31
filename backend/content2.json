@@ -1,0 +1,211 @@
+{"tag": "affects_whom",     
+	 "patterns": ["Who does mental illness affect?", "Who is affected by mentall illness"],        
+	 "responses": ["It is estimated that mental illness affects 1 in 5 adults in America, and that 1 in 24 adults have a serious mental illness."],       
+ 	 "context": [""]    
+	},
+        {"tag": "what_causes",         
+	 "patterns": ["What causes mental illness?","What leads to mental illness?","how does one get mentally ill?"],         
+	 "responses": ["Symptoms of mental health disorders vary depending on the type and severity of the condition."],       
+	 "context": [""]        
+	},
+	
+       {"tag": "recover",        
+	 "patterns": ["Can people with mental illness recover?","Is it possible to recover from mental illness"],        
+	 "responses": ["When healing from mental illness, early identification and treatment are of vital importance. Based on the nature of the illness, there are a range of effective treatments available. For any type of treatment, it is essential that the person affected is proactive and fully engaged in their own recovery process. Many people with mental illnesses who are diagnosed and treated respond well, although some might experience a return of symptoms. Even in such cases, with careful monitoring and management of the disorder, it is still quite possible to live a fulfilled and productive life."],       
+	 "context": [""]        
+	},
+	{"tag": "steps",       
+	 "patterns": ["I know someone who appears to have such symptoms?","What are the steps to be followed incase of symptoms"],        
+	 "responses": ["Although this website cannot substitute for professional advice, we encourage those with symptoms to talk to their friends and family members and seek the counsel of a mental health professional. The sooner the mental health condition is identified and treated, the sooner they can get on the path to recovery.If you know someone who is having problems, don't assume that the issue will resolve itself. Let them know that you care about them, and that there are treatment options available that will help them heal. Speak with a mental health professional or counselor if you think your friend or family member is experiencing the symptoms of a mental health condition. If the affected loved one knows that you support them, they will be more likely to seek out help."],        
+	 "context": [""]       
+	},	
+	{"tag": "find_help",
+	 "patterns": ["How to find mental health professional for myself","How to find mental health professional?"],
+	 "responses": ["Feeling comfortable with the professional you or your child is working with is critical to the success of the treatment. Finding the professional who best fits your needs may require research. Start by searching for providers in your area."],
+	 "context": [""]
+	},
+	{"tag": "treatement_options",
+	 "patterns": ["What treatment options are available?","How can one recover?"],
+	 "responses": ["Just as there are different types of medications for physical illness, different treatment options are available for individuals with mental illness. Treatment works differently for different people. It is important to find what works best for you or your child."],
+	 "context": [""]
+	},
+	{"tag": "treatment_tips",
+	 "patterns": ["How to become involved in treatment?","What should I keep in mind if I begin treatment?"],
+	 "responses":["Since beginning treatment is a big step for individuals and families, it can be very overwhelming."],
+	 "context": [""]
+	},
+	{"tag": "professional_types",
+	 "patterns": ["What is the difference between mental health professionals?","What are the different types of mental health professionals present?"],
+	 "responses":["There are many types of mental health professionals. The variety of providers and their services may be confusing. Each have various levels of education, training, and may have different areas of expertise. Finding the professional who best fits your needs may require some research."],
+	 "context": [""]
+	},
+	{"tag": "right_professional",
+	 "patterns": ["How can I find a mental health professional right myself?","How to find the right mental health professional?"],
+	 "responses":["Feeling comfortable with the professional you or your child is working with is critical to the success of your treatment. Finding the professional who best fits your needs may require some research."],
+	 "context": [""]
+	},
+        {
+             "tag":"common cold symptoms",
+             "patterns": ["Runny or stuffy nose",
+             "Sore throat",
+             "Cough",
+             "Congestion",
+             "Slight body aches or a mild headache",
+             "Sneezing",
+             "Low-grade fever",
+             "Generally feeling unwell (malaise)"],
+             "responses":["It seems that you are suffering from common cold"]
+            },
+            {
+             "tag":"fever symptoms",
+             "patterns":["Sweating",
+             "Chills and shivering",
+             "Headache",
+             "Muscle aches",
+             "Loss of appetite",
+             "Irritability",
+             "Dehydration",
+             "General weakness"],
+             "responses":["It seems that you are suffering from fever"]
+            },
+            {
+             "tag":"Diabetes symptoms",
+             "patterns":["increased hunger",
+             "increased thirst",
+             "weight loss",
+             "frequent urination",
+             "blurry vision",
+             "extreme fatigue"],
+             "responses":["It seems that you are suffering from Diabetes"]
+            },
+            {
+             "tag":"Depression symptoms",
+             "patterns":["Hopeless outlook",
+             "Lost interest",
+             "Increased fatigue",
+             "sleep problem",
+             "Anxiety",
+             "change in weight",
+             "Looking at death"],
+             "responses":["It seem that you are suffering from depression"]
+            },
+            {
+             "tag":"Asthma symptoms",
+             "patterns":["coughing",
+             "tightness in the chest",
+             "shortness of breath",
+             "difficulty talking",
+             "panic",
+             "fatigue"],
+             "responses":["It seem that you are suffering from Asthma"]
+            },
+            {
+             "tag":"common cold prevention",
+             "patterns":["What medicines can I buy to help me with my common cold?","tell me some prevention method from common cold","What should I eat or drink if i am suffering from common cold?","How can I keep from getting a cold or the flu?"],
+             "responses":["medicines you can consume : Dextromethorphan,Decongestant,Diphenhydramine,Crocin Cold & Flu Max, preventions that you must follow :Wash your hands,Avoid touching your face,Clean frequently used surfaces,Use hand sanitizers,SUGGESTED FOODS ARE:Garlic,Vitamin C–containing fruits,Leafy greens,Broccoli,Oatmeal,Spices,Chicken Soup"]
+            },
+            {
+             "tag":"fever prevention",
+             "patterns":["What medicines can I buy to help me with my fever?","tell me some prevention method from fever","What should I eat or drink if i am suffering from fever?","How can I keep from getting a fever?"],
+             "responses":["medicines you can consume : acetaminophen ,ibuprofen,aspirin,Crocin Cold & Flu Max, prevention that you must follow :Wash your hands,Cover your mouth when you cough and your nose when you sneeze,Clean frequently used surfaces,Avoid sharing cups, glasses, and eating utensils with other people.,SUGGESTED FOODS ARE:Garlic,Vitamin C–containing fruits,Leafy greens,Broccoli,Oatmeal,Spices,Chicken Soup"]
+            },
+            {
+             "tag":"diabetes prevention",
+             "patterns":["What medicines can I buy to help me with my diabetes?","tell me some prevention method from diabetes","What should I eat or drink if i am suffering from diabetes?","How can I keep from getting diabetes?"],
+             "responses":["medicines you can consume : Insulin ,Amylinomimetic drug,Dipeptidyl peptidase-4 (DPP-4) inhibitor, prevention that you must follow :Cut Sugar and Refined Carbs From Your Diet,Work Out Regularly,Drink Water as Your Primary Beverage,Lose Weight If You’re Overweight or Obese,Quit Smoking, Follow a Very-Low-Carb Diet,Watch Portion Sizes,SUGGESTED FOODS ARE:Leafy greens,Avocados,Eggs"]
+            },
+            {
+             "tag":"depression prevention",
+             "patterns":["What medicines can I buy to help me with my depression?","tell me some prevention method from depression","What should I eat or drink if i am suffering from depression?","How can I keep from getting depression?"],
+             "responses":["medicines you can consume :  brexpiprazole, quetiapine,olanzapine, prevention that you must follow :Exercise regularly,Cut back on social media time,Drink Water as Your Primary Beverage,Build strong relationships,Minimize your daily choices, Follow a Very-Low-Carb Diet,SUGGESTED FOODS ARE:Get Enough Vitamin D,Include Omega-3 Fatty Acids,Beans and legumes"]
+            },
+            {
+             "tag":"asthma prevention",
+             "patterns":["What medicines can I buy to help me with my asthma?","tell me some prevention method from asthma","What should I eat or drink if i am suffering from asthma?","How can I keep from getting asthma?"],
+             "responses":["medicines you can consume : epinephrine,anticholinergic,Proair HFA, prevention that you must follow : Identify Asthma Triggers, Stay Away From Allergens,Avoid Smoke of Any Type,SUGGESTED FOODS ARE:carrots,juice,eggs,broccoli,cantaloupe,milk"]
+            },
+            {
+             "tag":"Consultation",
+             "patterns": ["who should i contact for consultation?","is there any doctor available?","can you give me some suggestions for doctor consultations?","can you set up a meeting with a doctor for consultation?","is there any doctor available for consultation"],
+             "responses":["You can contact various doctors here for any kind of consultation: 1. https://www.1mg.com/online-doctor-consultation, 2. https://www.tatahealth.com/online-doctor-consultation/general-physician, 3. https://www.doconline.com/, or you can pay a visit to your local area doctor or family doctor."]
+            },
+            {
+                "tag":"common cold symptoms",
+                "patterns": ["Runny or stuffy nose",
+                "Sore throat",
+                "Cough",
+                "Congestion",
+                "Slight body aches or a mild headache",
+                "Sneezing",
+                "Low-grade fever",
+                "Generally feeling unwell (malaise)"],
+                "responses":["It seems that you are suffering from common cold"]
+               },
+               {
+                "tag":"fever symptoms",
+                "patterns":["Sweating",
+                "Chills and shivering",
+                "Headache",
+                "Muscle aches",
+                "Loss of appetite",
+                "Irritability",
+                "Dehydration",
+                "General weakness"],
+                "responses":["It seems that you are suffering from fever"]
+               },
+               {
+                "tag":"Diabetes symptoms",
+                "patterns":["increased hunger",
+                "increased thirst",
+                "weight loss",
+                "frequent urination",
+                "blurry vision",
+                "extreme fatigue"],
+                "responses":["It seems that you are suffering from Diabetes"]
+               },
+               {
+                "tag":"Depression symptoms",
+                "patterns":["Hopeless outlook",
+                "Lost interest",
+                "Increased fatigue",
+                "sleep problem",
+                "Anxiety",
+                "change in weight",
+                "Looking at death"],
+                "responses":["It seem that you are suffering from depression"]
+               },
+               {
+                "tag":"Asthma symptoms",
+                "patterns":["coughing",
+                "tightness in the chest",
+                "shortness of breath",
+                "difficulty talking",
+                "panic",
+                "fatigue"],
+                "responses":["It seem that you are suffering from Asthma"]
+               },
+               {
+                "tag":"common cold prevention",
+                "patterns":["What medicines can I buy to help me with my common cold?","tell me some prevention method from common cold","What should I eat or drink if i am suffering from common cold?","How can I keep from getting a cold or the flu?"],
+                "responses":["medicines you can consume : Dextromethorphan,Decongestant,Diphenhydramine,Crocin Cold & Flu Max, preventions that you must follow :Wash your hands,Avoid touching your face,Clean frequently used surfaces,Use hand sanitizers,SUGGESTED FOODS ARE:Garlic,Vitamin C–containing fruits,Leafy greens,Broccoli,Oatmeal,Spices,Chicken Soup"]
+               },
+               {
+                "tag":"fever prevention",
+                "patterns":["What medicines can I buy to help me with my fever?","tell me some prevention method from fever","What should I eat or drink if i am suffering from fever?","How can I keep from getting a fever?"],
+                "responses":["medicines you can consume : acetaminophen ,ibuprofen,aspirin,Crocin Cold & Flu Max, prevention that you must follow :Wash your hands,Cover your mouth when you cough and your nose when you sneeze,Clean frequently used surfaces,Avoid sharing cups, glasses, and eating utensils with other people.,SUGGESTED FOODS ARE:Garlic,Vitamin C–containing fruits,Leafy greens,Broccoli,Oatmeal,Spices,Chicken Soup"]
+               },
+               {
+                "tag":"diabetes prevention",
+                "patterns":["What medicines can I buy to help me with my diabetes?","tell me some prevention method from diabetes","What should I eat or drink if i am suffering from diabetes?","How can I keep from getting diabetes?"],
+                "responses":["medicines you can consume : Insulin ,Amylinomimetic drug,Dipeptidyl peptidase-4 (DPP-4) inhibitor, prevention that you must follow :Cut Sugar and Refined Carbs From Your Diet,Work Out Regularly,Drink Water as Your Primary Beverage,Lose Weight If You’re Overweight or Obese,Quit Smoking, Follow a Very-Low-Carb Diet,Watch Portion Sizes,SUGGESTED FOODS ARE:Leafy greens,Avocados,Eggs"]
+               },
+               {
+                "tag":"depression prevention",
+                "patterns":["What medicines can I buy to help me with my depression?","tell me some prevention method from depression","What should I eat or drink if i am suffering from depression?","How can I keep from getting depression?"],
+                "responses":["medicines you can consume :  brexpiprazole, quetiapine,olanzapine, prevention that you must follow :Exercise regularly,Cut back on social media time,Drink Water as Your Primary Beverage,Build strong relationships,Minimize your daily choices, Follow a Very-Low-Carb Diet,SUGGESTED FOODS ARE:Get Enough Vitamin D,Include Omega-3 Fatty Acids,Beans and legumes"]
+               },
+               {
+                "tag":"asthma prevention",
+                "patterns":["What medicines can I buy to help me with my asthma?","tell me some prevention method from asthma","What should I eat or drink if i am suffering from asthma?","How can I keep from getting asthma?"],
+                "responses":["medicines you can consume : epinephrine,anticholinergic,Proair HFA, prevention that you must follow : Identify Asthma Triggers, Stay Away From Allergens,Avoid Smoke of Any Type,SUGGESTED FOODS ARE:carrots,juice,eggs,broccoli,cantaloupe,milk"]
+               } 
