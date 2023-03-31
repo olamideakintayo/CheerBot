@@ -70,7 +70,7 @@ function App() {
   }, [confirmReload]);
 
   // Send message to backend and add response to chat history
-  const apiUrl = "http://34.136.104.12/api/";
+  const apiUrl = "http://34.136.104.12/api";
   const handleSubmit = async (messageText) => {
     axios
       .post(apiUrl, { msg: messageText }, { mode: "no-cors" })
