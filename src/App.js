@@ -197,9 +197,9 @@ function App() {
             </form>
           </div>
           <div className="box">
-            <MainContainer>
+          <MainContainer>
               {/* chat container using several components from a chat UI library called react-chat-ui*/}
-              <ChatContainer>
+              <ChatContainer className="mt-0 mb-0">
                 <MessageList
                   scrollBehavior="smooth"
                   typingIndicator={
@@ -216,6 +216,7 @@ function App() {
                   onSend={handleSubmit}
                 />
               </ChatContainer>
+              </MainContainer>
               {/*The ReactModal component  used to display a modal dialog. Rendered conditionally  based on the value of isModalOpen.*/}
               <ReactModal isOpen={isModalOpen} style={customModalStyles}>
                 {isModalOpen && responseData && (
@@ -275,7 +276,6 @@ function App() {
                   Close Modal
                 </button>
               </ReactModal>
-            </MainContainer>
           </div>
         </div>
       </div>
