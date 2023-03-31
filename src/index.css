@@ -3,11 +3,19 @@
 @tailwind utilities;
 
 
+:root {
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+}
 
 .welcome {
   font-size: 30px;
 }
 
+.header{
+  height: 25vh;
+}
 
 * {
   padding: 0;
@@ -22,4 +30,5 @@
   bottom: 0;
   width: 100%;
   overflow: auto;
+  height: 75vh;
 }

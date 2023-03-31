@@ -174,111 +174,110 @@ function App() {
   return (
     <div className="">
       <div className="header font-bold">
-        <p style={{ textAlign: "center" }} className="welcome">Welcome to CheerBot😃</p>
-    
-      <div>
-        <p style={{ textAlign: "center" }}>
-          Boost Your Spirit with the CheerBot : Your Personal Cheerleader
+        <p style={{ textAlign: "center" }} className="welcome">
+          Welcome to CheerBot😃
         </p>
-      </div>
-      <div>
-            {/* 
+
+        <div>
+          <p style={{ textAlign: "center" }}>
+            Boost Your Spirit with the CheerBot : Your Personal Cheerleader
+          </p>
+        </div>
+        <div>
+          {/* 
   form containing a button that, when clicked, will call the submitLocation function.
 */}
-            <form onSubmit={submitLocation}>
-              <button
-                className="bg-gray-500 hover:bg-blue-300 text-white font-bold py-2 px-4 md:mt-3 mt-1 rounded-lg mx-auto block"
-                type="submit"
-              >
-                Therapist Around You
-              </button>
-            </form>
-          </div>
+          <form onSubmit={submitLocation}>
+            <button
+              className="bg-gray-500 hover:bg-blue-300 text-white font-bold py-2 px-4 md:mt-3 mt-1 rounded-lg mx-auto block"
+              type="submit"
+            >
+              Therapist Around You
+            </button>
+          </form>
+        </div>
 
-              {/*The ReactModal component  used to display a modal dialog. Rendered conditionally  based on the value of isModalOpen.*/}
-              <ReactModal isOpen={isModalOpen} style={customModalStyles}>
-                {isModalOpen && responseData && (
-                  <div className="text-black">
-                    <div className="bg-blue-500 py-4">
-                      <p className="text-center text-white font-bold flex items-center justify-center">
-                        <i className="fas fa-hospital text-3xl mr-2"></i>
-                        Here are Therapist around you
+        {/*The ReactModal component  used to display a modal dialog. Rendered conditionally  based on the value of isModalOpen.*/}
+        <ReactModal isOpen={isModalOpen} style={customModalStyles}>
+          {isModalOpen && responseData && (
+            <div className="text-black">
+              <div className="bg-blue-500 py-4">
+                <p className="text-center text-white font-bold flex items-center justify-center">
+                  <i className="fas fa-hospital text-3xl mr-2"></i>
+                  Here are Therapist around you
+                </p>
+              </div>
+              {/* A div that displays a list of therapist locations. The list is generated based on data in the responseData object.*/}
+              <div>
+                {Object.keys(responseData.list).map((key) => {
+                  const isPresentlyOpen =
+                    responseData.list[key].open === "Presently Open";
+                  return (
+                    <div className="border-gray-300 py-9 border-b-4">
+                      <p className="font-bold text-xl mb-2">
+                        <i className="fas fa-hospital"></i> Hospital Name:
+                      </p>
+                      <p className="text-lg">{responseData.list[key].name}</p>
+                      <p className="font-bold text-xl mt-4 mb-2">
+                        <i className="fas fa-map-marker-alt"></i> Address:
+                      </p>
+                      <p className="text-lg">
+                        {responseData.list[key].vicinity}
+                      </p>
+                      <div
+                        className="text-blue-700 hover:text-pink-300 hover:underline text-lg mt-4"
+                        dangerouslySetInnerHTML={{
+                          __html: `<p><i class="fas fa-map-marker-alt"></i> Google Map Link: ${responseData.list[key].googleMap_link}</p>`,
+                        }}
+                      />
+                      <p className="font-bold text-xl mt-4 mb-2">
+                        <i className="far fa-clock"></i> Availability:
+                      </p>
+                      <p
+                        className={`text-lg ${
+                          isPresentlyOpen ? "text-green-500" : "text-red-500"
+                        }`}
+                      >
+                        {responseData.list[key].open}
                       </p>
                     </div>
-                    {/* A div that displays a list of therapist locations. The list is generated based on data in the responseData object.*/}
-                    <div>
-                      {Object.keys(responseData.list).map((key) => {
-                        const isPresentlyOpen =
-                          responseData.list[key].open === "Presently Open";
-                        return (
-                          <div className="border-gray-300 py-9 border-b-4">
-                            <p className="font-bold text-xl mb-2">
-                              <i className="fas fa-hospital"></i> Hospital Name:
-                            </p>
-                            <p className="text-lg">
-                              {responseData.list[key].name}
-                            </p>
-                            <p className="font-bold text-xl mt-4 mb-2">
-                              <i className="fas fa-map-marker-alt"></i> Address:
-                            </p>
-                            <p className="text-lg">
-                              {responseData.list[key].vicinity}
-                            </p>
-                            <div
-                              className="text-blue-700 hover:text-pink-300 hover:underline text-lg mt-4"
-                              dangerouslySetInnerHTML={{
-                                __html: `<p><i class="fas fa-map-marker-alt"></i> Google Map Link: ${responseData.list[key].googleMap_link}</p>`,
-                              }}
-                            />
-                            <p className="font-bold text-xl mt-4 mb-2">
-                              <i className="far fa-clock"></i> Availability:
-                            </p>
-                            <p
-                              className={`text-lg ${
-                                isPresentlyOpen ? "text-green-500" : "text-red-500"
-                              }`}
-                            >
-                              {responseData.list[key].open}
-                            </p>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </div>
-                )}
-                 <button
-                  className="bg-gray-500 hover:bg-blue-300 text-white font-bold py-2 mt-3 px-4 rounded-lg mx-auto block"
-                  type="submit"
-                  onClick={() => setIsModalOpen(false)}
-                >
-                  Close Modal
-                </button>
-              </ReactModal>
+                  );
+                })}
               </div>
-                 <div className="box">
-          <MainContainer>
-              {/* chat container using several components from a chat UI library called react-chat-ui*/}
-              <ChatContainer className="mt-0 mb-0">
-                <MessageList
-                  scrollBehavior="smooth"
-                  typingIndicator={
-                    typing ? <TypingIndicator content="Cheer Bot😃" /> : null
-                  }
-                >
-                  {messages.map((message, index) => (
-                    <Message key={index} model={message} />
-                  ))}
-                </MessageList>
-                <MessageInput
-                  attachButton={false}
-                  placeholder="Enter message"
-                  onSend={handleSubmit}
-                />
-              </ChatContainer>
-              </MainContainer>
-              </div>
-               
-          </div>
+            </div>
+          )}
+          <button
+            className="bg-gray-500 hover:bg-blue-300 text-white font-bold py-2 mt-3 px-4 rounded-lg mx-auto block"
+            type="submit"
+            onClick={() => setIsModalOpen(false)}
+          >
+            Close Modal
+          </button>
+        </ReactModal>
+      </div>
+      <div className="box">
+        <MainContainer>
+          {/* chat container using several components from a chat UI library called react-chat-ui*/}
+          <ChatContainer className="mt-0 mb-0">
+            <MessageList
+              scrollBehavior="smooth"
+              typingIndicator={
+                typing ? <TypingIndicator content="Cheer Bot😃" /> : null
+              }
+            >
+              {messages.map((message, index) => (
+                <Message key={index} model={message} />
+              ))}
+            </MessageList>
+            <MessageInput
+              attachButton={false}
+              placeholder="Enter message"
+              onSend={handleSubmit}
+            />
+          </ChatContainer>
+        </MainContainer>
+      </div>
+    </div>
   );
 }
 
