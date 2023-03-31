@@ -162,7 +162,7 @@ function App() {
       maxWidth: "80%",
       maxHeight: "80%",
       overflow: "auto",
-      borderRadius: "5px",
+      borderRadius: "30px",
       outline: "none",
       padding: "20px",
     },
