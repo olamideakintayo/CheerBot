@@ -222,6 +222,8 @@ function App() {
 
                     <div>
                       {Object.keys(responseData.list).map((key) => {
+                        const isClosed =
+                          responseData.list[key].open === "Closed at this time";
                         return (
                           <div className="border-gray-300 py-9 border-b-4">
                             <p className="font-bold text-xl mb-2">
@@ -245,7 +247,11 @@ function App() {
                             <p className="font-bold text-xl mt-4 mb-2">
                               <i className="far fa-clock"></i> Availability:
                             </p>
-                            <p className="text-lg">
+                            <p
+                              className={`text-lg ${
+                                isClosed ? "text-blue-500" : "text-red-500"
+                              }`}
+                            >
                               {responseData.list[key].open}
                             </p>
                           </div>
