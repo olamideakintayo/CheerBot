@@ -14,7 +14,7 @@
 }
 
 .header{
-  height: 25vh;
+height: 50vh;
 }
 
 * {
@@ -30,5 +30,5 @@
   bottom: 0;
   width: 100%;
   overflow: auto;
-  height: 72vh;
+  height: 64vh;
 }
