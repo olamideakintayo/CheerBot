@@ -1,12 +1,11 @@
 # Tensorflow Chatbot
-
 This project is capable of interacting with user in four different ways. Each of these module are functioning independently.
 
 * Web interface
 * Reset Api
 * GUI
 * CLI
-
+To access all Web features location data must be accepted 
 And also you can train your own data model which suit to your business model. The data model format is not complex. 
 
 ### Installing
@@ -40,20 +39,16 @@ Django framework is used to implement this web app. You can install Django by fa
 python manage.py runserver
 
 #### Rest api
-This app allows you to interact with bot using a rest api. You can find the [controller](https://github.com/nimeshabuddhika/Tensorflow-Chatbot/blob/master/Tensorflow_Chatbot/Api/controller.py) file from */Tensorflow_Chatbot/Api/controller.py* location. To execute this Rest api you also need to install [Django framework](https://www.djangoproject.com/download/) 
+This app allows you to interact with bot using a rest api. You can find the api @ backend/Tensorflow-Chatbot/blob/master/Tensorflow_Chatbot/Api/controller.py file from */Tensorflow_Chatbot/Api/controller.py* location. To execute this Rest api you also need to install [Django framework](https://www.djangoproject.com/download/) 
 
 
 * Request URL     &nbsp;&nbsp;&nbsp;: http://cheerbot/api/
 * Request Type    &nbsp;&nbsp;&nbsp;: 'POST'
 * Pay load        &nbsp;&nbsp;&nbsp;: ```{"msg" : "What is your name"}```
-* Response        &nbsp;&nbsp;&nbsp;: ```{"ques" : "What is your name", "res":"I'm Slack", "time" :"2018-01 10:07:32"}```
-
-
-![api](https://user-images.githubusercontent.com/7195953/34638814-b46d1cbe-f2f9-11e7-916b-b79ef0eeff0c.PNG)
-
+* Response        &nbsp;&nbsp;&nbsp;: ```{"ques" : "What is your name", "res":"I'm Slack",}
 #### GUI
 
-You can find UI directory from root directory and then execute [ChatView.py](https://github.com/nimeshabuddhika/Tensorflow-Chatbot/blob/master/UI/ChatView.py) file. Before executing this you need to install pygubu. Pygubu is a RAD tool which helps to develop python tknter base user interfaces.
+You can find UI directory from root directory and then execute [ChatView.py]backend/Tensorflow-Chatbot/blob/master/UI/ChatView.py file. Before executing this you need to install pygubu. Pygubu is a RAD tool which helps to develop python tknter base user interfaces.
 * Download pygubu from [here](https://pypi.python.org/pypi/pygubu).
 * And then extract .tar.gz file and execute following command.
 
@@ -78,7 +73,8 @@ You can interact with bot through command line interface. So find [cli.py](https
 * [Django](https://www.djangoproject.com/) - Web application
 * [Tkinter](https://wiki.python.org/moin/TkInter) - GUI
 * [Pygubu](https://pypi.python.org/pypi/pygubu) - To Design GUI
-# Getting Started with Create React App
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
