@@ -175,7 +175,8 @@ function App() {
     <div className="">
       <div className="header font-bold">
         <p style={{ textAlign: "center" }}>Welcome to CheerBot😃</p>
-        <div>
+      </div>
+      <div>
         <p style={{ textAlign: "center" }}>
           Boost Your Spirit with the CheerBot : Your Personal Cheerleader
         </p>
@@ -195,8 +196,6 @@ function App() {
               </button>
             </form>
           </div>
-      </div>
-      
           <div className="box">
           <MainContainer>
               {/* chat container using several components from a chat UI library called react-chat-ui*/}
