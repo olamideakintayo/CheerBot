@@ -1,5 +1,5 @@
 // Importing necessary dependencies and styles
-import "@chatscope/chat-ui-kit-styles/dist/default/styles.min.css";
+//import "@chatscope/chat-ui-kit-styles/dist/default/styles.min.css";
 import { useState, useEffect } from "react";
 import Swal from "sweetalert2";
 import ReactModal from "react-modal";
