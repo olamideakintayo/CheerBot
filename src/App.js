@@ -256,7 +256,7 @@ function App() {
                             </p>
                             <p
                               className={`text-lg ${
-                                isClosed ? "text-blue-500" : "text-red-500"
+                                isClosed ? "text-green-500" : "text-red-500"
                               }`}
                             >
                               {responseData.list[key].open}
