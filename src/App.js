@@ -182,8 +182,6 @@ function App() {
         </p>
       </div>
       <div>
-        <div className="wrapper">
-          <div>
             {/* 
   form containing a button that, when clicked, will call the submitLocation function.
 */}
@@ -196,27 +194,7 @@ function App() {
               </button>
             </form>
           </div>
-          <div className="box">
-          <MainContainer>
-              {/* chat container using several components from a chat UI library called react-chat-ui*/}
-              <ChatContainer className="mt-0 mb-0">
-                <MessageList
-                  scrollBehavior="smooth"
-                  typingIndicator={
-                    typing ? <TypingIndicator content="Cheer Bot😃" /> : null
-                  }
-                >
-                  {messages.map((message, index) => (
-                    <Message key={index} model={message} />
-                  ))}
-                </MessageList>
-                <MessageInput
-                  attachButton={false}
-                  placeholder="Enter message"
-                  onSend={handleSubmit}
-                />
-              </ChatContainer>
-              </MainContainer>
+
               {/*The ReactModal component  used to display a modal dialog. Rendered conditionally  based on the value of isModalOpen.*/}
               <ReactModal isOpen={isModalOpen} style={customModalStyles}>
                 {isModalOpen && responseData && (
@@ -268,7 +246,7 @@ function App() {
                     </div>
                   </div>
                 )}
-                <button
+                 <button
                   className="bg-gray-500 hover:bg-blue-300 text-white font-bold py-2 mt-3 px-4 rounded-lg mx-auto block"
                   type="submit"
                   onClick={() => setIsModalOpen(false)}
@@ -276,10 +254,30 @@ function App() {
                   Close Modal
                 </button>
               </ReactModal>
+                 <div className="box">
+          <MainContainer>
+              {/* chat container using several components from a chat UI library called react-chat-ui*/}
+              <ChatContainer className="mt-0 mb-0">
+                <MessageList
+                  scrollBehavior="smooth"
+                  typingIndicator={
+                    typing ? <TypingIndicator content="Cheer Bot😃" /> : null
+                  }
+                >
+                  {messages.map((message, index) => (
+                    <Message key={index} model={message} />
+                  ))}
+                </MessageList>
+                <MessageInput
+                  attachButton={false}
+                  placeholder="Enter message"
+                  onSend={handleSubmit}
+                />
+              </ChatContainer>
+              </MainContainer>
+              </div>
+               
           </div>
-        </div>
-      </div>
-    </div>
   );
 }
 
