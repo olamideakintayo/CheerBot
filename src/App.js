@@ -32,33 +32,34 @@ function App() {
   // Add an event listener for the beforeunload event and remove it when the component unmounts
   const [confirmReload, setConfirmReload] = useState(false);
 
+  //Adding a useEffect hook which handles the "beforeunload" event and displays a confirmation message if the user tries to refresh the page. Also clears the chats.
   useEffect(() => {
     const handleBeforeUnload = (event) => {
       if (!confirmReload) {
         event.preventDefault();
-        event.returnValue = '';
+        event.returnValue = "";
         Swal.fire({
           title:
             "We respect your privacy, if you refresh this page all chat history will be cleared. Refresh?",
           text: "You won't be able to revert this!",
           icon: "warning",
           showCancelButton: true,
-          confirmButtonColor: "#3085d6",
-          cancelButtonColor: "#d33",
+          confirmButtonColor: "#d33",
+          cancelButtonColor: "#3085d6",
           confirmButtonText: "Yes, delete it!",
         }).then((result) => {
           if (result.isConfirmed) {
-            setConfirmReload(true)
+            setConfirmReload(true);
             Swal.fire("Deleted!", "Your Chats has been deleted.", "success");
           }
         });
       }
     };
 
-    window.addEventListener('beforeunload', handleBeforeUnload);
+    window.addEventListener("beforeunload", handleBeforeUnload);
 
     return () => {
-      window.removeEventListener('beforeunload', handleBeforeUnload);
+      window.removeEventListener("beforeunload", handleBeforeUnload);
     };
   }, [confirmReload]);
 
@@ -116,6 +117,7 @@ function App() {
     setTyping(true);
   };
 
+  //A useEffect hook that handles the user location generation using the geolocation Api
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((position) => {
       setUserLocation({
@@ -144,6 +146,7 @@ function App() {
       });
   };
 
+  //custom css style for the modal
   const customModalStyles = {
     overlay: {
       backgroundColor: "rgba(0, 0, 0, 0.75)",
@@ -175,13 +178,15 @@ function App() {
       </div>
       <div>
         <p style={{ textAlign: "center" }}>
-          Boost Your Spirit with the CheerBot : Your Personal
-          Cheerleader
+          Boost Your Spirit with the CheerBot : Your Personal Cheerleader
         </p>
       </div>
       <div>
         <div className="wrapper">
           <div>
+            {/* 
+  form containing a button that, when clicked, will call the submitLocation function.
+*/}
             <form onSubmit={submitLocation}>
               <button
                 className="bg-gray-500 hover:bg-blue-300 text-white font-bold py-2 px-4 md:mt-3 mt-1 rounded-lg mx-auto block"
@@ -193,6 +198,7 @@ function App() {
           </div>
           <div className="box">
             <MainContainer>
+              {/* chat container using several components from a chat UI library called react-chat-ui*/}
               <ChatContainer>
                 <MessageList
                   scrollBehavior="smooth"
@@ -205,11 +211,12 @@ function App() {
                   ))}
                 </MessageList>
                 <MessageInput
-                attachButton={false}
+                  attachButton={false}
                   placeholder="Enter message"
                   onSend={handleSubmit}
                 />
               </ChatContainer>
+              {/*The ReactModal component  used to display a modal dialog. Rendered conditionally  based on the value of isModalOpen.*/}
               <ReactModal isOpen={isModalOpen} style={customModalStyles}>
                 {isModalOpen && responseData && (
                   <div className="text-black">
@@ -219,7 +226,7 @@ function App() {
                         Here are Therapist around you
                       </p>
                     </div>
-
+                    {/* A div that displays a list of therapist locations. The list is generated based on data in the responseData object.*/}
                     <div>
                       {Object.keys(responseData.list).map((key) => {
                         const isClosed =
@@ -267,10 +274,6 @@ function App() {
                 >
                   Close Modal
                 </button>
-                <input
-                  type="file"
-                  className="cui-chat-input--file-upload cui-file-upload-button hidden"
-                />
               </ReactModal>
             </MainContainer>
           </div>
