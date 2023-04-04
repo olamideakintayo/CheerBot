@@ -3,7 +3,7 @@ import "@chatscope/chat-ui-kit-styles/dist/default/styles.min.css";
 import { useState, useEffect } from "react";
 import Swal from "sweetalert2";
 import ReactModal from "react-modal";
-
+import React from "react";
 import "./index.css";
 import axios from "axios";
 import {
@@ -28,6 +28,9 @@ function App() {
   });
   const [responseData, setResponseData] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [articles, setArticles] = useState([]);
+
+  const [isArticleModalOpen, setArticleModalOpen] = useState(false);
 
   // Add an event listener for the beforeunload event and remove it when the component unmounts
   const [confirmReload, setConfirmReload] = useState(false);
@@ -146,6 +149,22 @@ function App() {
       });
   };
 
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await axios.get("https://cheerbot.dev/api/news");
+      setArticles(response.data.article_list);
+    };
+    fetchData();
+  }, []);
+
+  const handleArticleModalOpen = () => {
+    setArticleModalOpen(true);
+  };
+
+  const handleArticleModalClose = () => {
+    setArticleModalOpen(false);
+  };
+
   //custom css style for the modal
   const customModalStyles = {
     overlay: {
@@ -183,18 +202,83 @@ function App() {
             Boost Your Spirit with the CheerBot : Your Personal Cheerleader
           </p>
         </div>
-        <div>
+        <div className="flex flex-wrap justify-center gap-4 md:gap-8">
           {/* 
   form containing a button that, when clicked, will call the submitLocation function.
 */}
-          <form onSubmit={submitLocation}>
+
+          <form onSubmit={submitLocation} className="text-center">
             <button
-              className="bg-gray-500 hover:bg-blue-300 text-white font-bold py-2 px-4 md:mt-3 mt-1 rounded-lg mx-auto block"
+              className="bg-gray-500 hover:bg-blue-300 text-white font-bold py-2 px-4 md:mt-3 mt-1 rounded-lg"
               type="submit"
             >
               Therapist Around You
             </button>
           </form>
+          <div className="flex justify-center items-center">
+            <button
+              onClick={handleArticleModalOpen}
+              className="bg-blue-500 hover:bg-sky-500 text-white font-bold mt-1 md:mt-3 py-2 px-4 rounded"
+            >
+              Read Blog
+            </button>
+          </div>
+          <div>
+            {isArticleModalOpen && (
+              <div className="fixed z-50 inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center transition-all duration-500">
+                {/* This div is displaying the data from the API response as a list of articles, with each article represented by a div element.*/}
+                <div className="bg-white w-full h-full max-w-screen-lg overflow-y-auto rounded-lg p-4">
+                  {/* A button which when clicked, calls the handleButtonClick() function which retrieves the data from the API  */}
+                  <button
+                    onClick={handleArticleModalClose}
+                    className="absolute top-4 right-4 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded"
+                  >
+                    Close
+                  </button>
+                  <div className="flex flex-wrap -mx-4">
+                    {/* The Object.keys() method is used to iterate over the keys of the articles object, which correspond to the indices of the articles in the response. */}
+
+                    {Object.keys(articles).map((key) => (
+                      <div
+                        key={key}
+                        className="p-4 border-b-2 rounded-lg w-full lg:w-1/2  px-4"
+                      >
+                        <img
+                          src={articles[key].image_url}
+                          alt=""
+                          className="w-full rounded-lg mb-4"
+                        />
+                        <div>
+                          <h1 className="text-black text-2xl">
+                            {articles[key].title}
+                          </h1>
+                        </div>
+                        <h3 className="text-lg text-gray-400 mb-2">
+                          <a
+                            href={articles[key].post_url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          ></a>
+                        </h3>
+                        <p className="text-gray-400">
+                          <a
+                            href={articles[key].post_url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            {articles[key].description}
+                          </a>
+                        </p>
+                        <p className="text-red-600 text-sm mb-2">
+                          {articles[key].source} | {articles[key].author}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
         </div>
 
         {/*The ReactModal component  used to display a modal dialog. Rendered conditionally  based on the value of isModalOpen.*/}
